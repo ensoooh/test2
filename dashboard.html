@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome, <span id="nickname"></span>!</h2>
+        <h3>Borrowed Books</h3>
+        <ul id="borrowed-books"></ul>
+        <button class="logout-btn" onclick="logout()">Log Out</button>
+        <button class="borrow-another-book-btn" onclick="location.href='borrow.html'">Borrow Another Book</button>
+        <button class="scan-btn" onclick="redirectToScanningPage()">Scan Book</button> <!-- Added onclick event to redirect to scanning page -->
+    </div>
+    <script src="script.js"></script>   
+    <script>
+        // Update the dashboard with user's nickname and borrowed books' due dates
+        var currentUser = localStorage.getItem("currentUser");
+        document.getElementById("nickname").textContent = currentUser;
+
+        var borrowedBooks = JSON.parse(localStorage.getItem(currentUser + "-books"));
+        var borrowedBooksList = document.getElementById("borrowed-books");
+        if (borrowedBooks && borrowedBooks.length > 0) {
+            borrowedBooks.forEach(function(book) {
+                var li = document.createElement("li");
+                li.textContent = book.title + " (Due Date: " + book.dueDate + ")";
+                borrowedBooksList.appendChild(li);
+            });
+        } else {
+            borrowedBooksList.innerHTML = "<li>No books borrowed</li>";
+        }
+
+        // Function to redirect to the scanning page
+        function redirectToScanningPage() {
+            window.location.href = "scanning.html";
+        }
+    </script>
+</body>
+</html>

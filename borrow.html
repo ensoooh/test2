@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrow a Book</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Borrow a Book</h2>
+        <label for="book-code">Enter Book Code:</label>
+        <input type="text" id="book-code">
+        <button onclick="confirmBook()">Confirm Book</button>
+        <div id="book-details" class="main"></div>
+        <label for="duration">Select Borrowing Duration:</label>
+        <select id="duration">
+            <option value="1">1 Day</option>
+            <option value="3">3 Days</option>
+            <option value="7">7 Days</option>
+        </select>
+        <button class="confirm-borrowing-btn" onclick="confirmBorrow()">Confirm Borrowing</button>
+        <button class="go-to-dashboard-btn" onclick="location.href='dashboard.html'">Go to Dashboard</button>
+        <button class="scan-btn" onclick="redirectToScanningPage()">Scan the book</button> <!-- Updated onclick event -->
+    </div>
+    <script src="script.js"></script>
+    <script>
+        // Function to redirect to the scanning page
+        function redirectToScanningPage() {
+            window.location.href = "scanning.html";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!-- scan-success.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan Success</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        .checkmark {
+            color: #008000; /* Green color */
+            font-size: 100px;
+            margin-bottom: 20px;
+        }
+        .success-message {
+            color: #008000; /* Green color */
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .back-button {
+            background-color: #8b0000; /* Maroon color */
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .back-button:hover {
+            background-color: #5b0000; /* Darker maroon color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="checkmark">&#10004;</div> <!-- Checkmark symbol -->
+        <div class="success-message">Scanned successfully</div> <!-- Success message -->
+        <a href="dashboard.html" class="back-button">Back to Dashboard</a> <!-- Back to Dashboard button -->
+    </div>
+</body>
+</html>
